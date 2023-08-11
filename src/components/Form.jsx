@@ -7,8 +7,12 @@ function Form({addTask}) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    addTask(content);
-    setContent("");
+    if (content === "") {
+      alert("Task cannot be empty");
+    } else {
+      addTask(content);
+      setContent("");
+    }
   }
   return (
     <div>

@@ -35,9 +35,13 @@ function Todo({todo, editTask, setTaskComplete, deleteTask}) {
   }
   function handleChangeSubmit(e) {
     e.preventDefault();
-    editTask(todo.id, newContent);
-    setNewContent("");
-    setEditing(false);
+    if (newContent === '') {
+      alert("Task cannot be empty");
+    } else {
+      editTask(todo.id, newContent);
+      setNewContent("");
+      setEditing(false);
+    }
   }
   function handleCancel(e) {
     e.preventDefault();
